@@ -118,7 +118,7 @@ public class QuickPanel {
 			}
 		});
 
-		f1.setOnTouchListener(new ButtonTouchListener(KeyEvent.KEYCODE_F1));
+		f1.setOnTouchListener(new ButtonTouchListener(131));
 		key0.setOnTouchListener(new ButtonTouchListener(KeyEvent.KEYCODE_0));
 		key1.setOnTouchListener(new ButtonTouchListener(KeyEvent.KEYCODE_1));
 		key2.setOnTouchListener(new ButtonTouchListener(KeyEvent.KEYCODE_2));
@@ -137,7 +137,7 @@ public class QuickPanel {
 		SharedPreferences Settings;
 
 		Settings = a.getSharedPreferences(Constants.APP_PREFERENCES,
-				Context.MODE_MULTI_PROCESS);
+				Context.MODE_PRIVATE);
 		controlsFlag = Settings.getInt(
 				Constants.APP_PREFERENCES_RESET_CONTROLS, -1);
 
@@ -166,47 +166,54 @@ public class QuickPanel {
 			key9.setLayoutParams(ControlsParams.coordinates(key9, 0, 675, 55,
 					55));
 
-			showPanel.setAlpha(0.5f);
-			f1.setAlpha(0.5f);
-			key0.setAlpha(1.0f);
-			key1.setAlpha(1.0f);
-			key2.setAlpha(1.0f);
-			key3.setAlpha(1.0f);
-			key4.setAlpha(1.0f);
-			key5.setAlpha(1.0f);
-			key6.setAlpha(1.0f);
-			key7.setAlpha(1.0f);
-			key8.setAlpha(1.0f);
-			key9.setAlpha(1.0f);
+			AlphaView.setAlphaForView(showPanel, 0.5f);
+			AlphaView.setAlphaForView(f1,0.5f);
+			AlphaView.setAlphaForView(key0,1.0f);
+			AlphaView.setAlphaForView(key1,1.0f);
+			AlphaView.setAlphaForView(key2,1.0f);
+			AlphaView.setAlphaForView(key3,1.0f);
+			AlphaView.setAlphaForView(key5,1.0f);
+			AlphaView.setAlphaForView(key6,1.0f);
+			AlphaView.setAlphaForView(key7,1.0f);
+			AlphaView.setAlphaForView(key8,1.0f);
+			AlphaView.setAlphaForView(key9,1.0f);
+
 
 		} else if (controlsFlag == 0) {
 
-			f1.setAlpha(Settings.getFloat(
+
+			AlphaView.setAlphaForView(f1,Settings.getFloat(
 					(Constants.APP_PREFERENCES_KEY_F1_OPACITY), 0.5f));
-			showPanel
-					.setAlpha(Settings
-							.getFloat(
-									(Constants.APP_PREFERENCES_BUTTON_SHOWPANEL_OPASITY),
-									0.5f));
-			key0.setAlpha(Settings.getFloat(
+
+			AlphaView.setAlphaForView(showPanel,Settings
+					.getFloat(
+							(Constants.APP_PREFERENCES_BUTTON_SHOWPANEL_OPASITY),
+							0.5f));
+
+			AlphaView.setAlphaForView(key0,Settings.getFloat(
 					(Constants.APP_PREFERENCES_KEY_0_OPACITY), 1.0f));
-			key1.setAlpha(Settings.getFloat(
+
+			AlphaView.setAlphaForView(key1,Settings.getFloat(
 					(Constants.APP_PREFERENCES_KEY_1_OPACITY), 1.0f));
-			key2.setAlpha(Settings.getFloat(
+			AlphaView.setAlphaForView(key2,Settings.getFloat(
 					(Constants.APP_PREFERENCES_KEY_2_OPACITY), 1.0f));
-			key3.setAlpha(Settings.getFloat(
+			AlphaView.setAlphaForView(key3,Settings.getFloat(
 					(Constants.APP_PREFERENCES_KEY_3_OPACITY), 1.0f));
-			key4.setAlpha(Settings.getFloat(
+
+			AlphaView.setAlphaForView(key4,Settings.getFloat(
 					(Constants.APP_PREFERENCES_KEY_4_OPACITY), 1.0f));
-			key5.setAlpha(Settings.getFloat(
+
+			AlphaView.setAlphaForView(key5,Settings.getFloat(
 					(Constants.APP_PREFERENCES_KEY_5_OPACITY), 1.0f));
-			key6.setAlpha(Settings.getFloat(
+
+			AlphaView.setAlphaForView(key6,Settings.getFloat(
 					(Constants.APP_PREFERENCES_KEY_6_OPACITY), 1.0f));
-			key7.setAlpha(Settings.getFloat(
+			AlphaView.setAlphaForView(key7,Settings.getFloat(
 					(Constants.APP_PREFERENCES_KEY_7_OPACITY), 1.0f));
-			key8.setAlpha(Settings.getFloat(
+			AlphaView.setAlphaForView(key8,Settings.getFloat(
 					(Constants.APP_PREFERENCES_KEY_8_OPACITY), 1.0f));
-			key9.setAlpha(Settings.getFloat(
+
+			AlphaView.setAlphaForView(key9,Settings.getFloat(
 					(Constants.APP_PREFERENCES_KEY_9_OPACITY), 1.0f));
 
 			f1.setLayoutParams(ControlsParams.coordinatesConfigureControls(f1,

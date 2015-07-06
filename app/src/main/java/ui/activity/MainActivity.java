@@ -67,7 +67,7 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.main);
         PreferencesHelper.getPrefValues(this);
         Settings = this.getSharedPreferences(
-                Constants.APP_PREFERENCES, Context.MODE_MULTI_PROCESS);
+                Constants.APP_PREFERENCES, Context.MODE_PRIVATE);
 
         LinearLayout layout = (LinearLayout) findViewById(R.id.toolbarLayout);
         linlaHeaderProgress = (LinearLayout)

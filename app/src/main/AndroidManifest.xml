@@ -1,8 +1,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.libopenmw.openmw"
     android:installLocation="auto"
     android:versionCode="1"
-    android:versionName="0.36">
+    android:versionName="0.36"
+
+    >
+
+    <uses-sdk tools:overrideLibrary="com.mikepenz.materialdrawer , com.mikepenz.iconics" />
 
     <application
         android:allowBackup="true"
@@ -22,29 +27,22 @@
         </activity>
         <activity
             android:name="ui.activity.GameActivity"
-            android:theme="@style/Theme.AppCompat.FullScreen"
             android:configChanges="keyboardHidden|orientation"
-        android:screenOrientation="sensorLandscape"></activity>
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/Theme.AppCompat.FullScreen"></activity>
         <activity
             android:name="ui.activity.ConfigureControls"
-            android:theme="@style/Theme.AppCompat.FullScreen"
             android:configChanges="keyboardHidden|orientation"
-        android:screenOrientation="sensorLandscape"></activity>
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/Theme.AppCompat.FullScreen"></activity>
         <activity
             android:name="com.libopenmw.openmw.FileChooser"
             android:label="Choose File"
-            android:screenOrientation="sensorLandscape"
-            >
+            android:screenOrientation="sensorLandscape">
             <action android:name="com.libopenmw.openmw.FileChooser" />
             <category android:name="android.intent.category.DEFAULT" />
         </activity>
     </application>
-
-    <!-- min Android 4.0 -->
-    <!-- target Android 5.1 -->
-    <uses-sdk
-        android:minSdkVersion="14"
-        android:targetSdkVersion="22" />
 
     <!-- OpenGL ES 2.0 -->
     <uses-feature android:glEsVersion="0x00020000" />

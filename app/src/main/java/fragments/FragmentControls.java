@@ -30,7 +30,7 @@ public class FragmentControls extends Fragment {
         super.onCreate(savedInstanceState);
 
         Settings = this.getActivity().getSharedPreferences(
-                Constants.APP_PREFERENCES, Context.MODE_MULTI_PROCESS);
+                Constants.APP_PREFERENCES, Context.MODE_PRIVATE);
         View rootView = inflater.inflate(R.layout.settings, container, false);
 
         PreferencesHelper.getPrefValues(this.getActivity());

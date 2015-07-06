@@ -1,21 +1,10 @@
 package fragments;
 
 import android.app.Activity;
-import android.content.Context;
 import android.graphics.Point;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.Display;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-
-import com.libopenmw.openmw.R;
 
 import constants.Constants;
-import screen.ScreenScaler;
-import ui.files.PreferencesHelper;
 import ui.files.Writer;
 
 /**
